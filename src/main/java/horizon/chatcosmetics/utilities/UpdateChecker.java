@@ -26,7 +26,7 @@ public class UpdateChecker {
             Bukkit.getPluginManager().disablePlugin(plugin);
         }
     }
-    public String getResourceUrl() { return "https://spigotmc.org/resources/" + project; }
+    public String getResourceUrl() { return "https://spigotmc.org/resources/chatcosmetics." + project; }
     public boolean checkForUpdates() throws Exception {
         URLConnection con = checkURL.openConnection();
         newVersion = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();

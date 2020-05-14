@@ -35,7 +35,7 @@ public final class ChatCosmetics extends JavaPlugin {
         YakoCoreAPI.getInstance(this);
 
         // Simple update checker for SpigotMC
-        updateChecker = new UpdateChecker(this, 12345);
+        updateChecker = new UpdateChecker(this, 78821);
         try {
             UPDATE = updateChecker.checkForUpdates();
             if (UPDATE) {
