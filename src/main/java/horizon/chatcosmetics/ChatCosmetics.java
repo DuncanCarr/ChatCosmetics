@@ -4,10 +4,8 @@ import com.yakovliam.yakocoreapi.YakoCoreAPI;
 import horizon.chatcosmetics.commands.CosmeticCMD;
 import horizon.chatcosmetics.configurations.CosmeticsConfig;
 import horizon.chatcosmetics.events.ChatEvent;
-import horizon.chatcosmetics.events.JoinEvent;
 import horizon.chatcosmetics.utilities.Cosmetic;
 import horizon.chatcosmetics.utilities.CosmeticManager;
-import horizon.chatcosmetics.utilities.UpdateChecker;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -34,19 +32,7 @@ public final class ChatCosmetics extends JavaPlugin {
         instance = this;
         YakoCoreAPI.getInstance(this);
 
-        // Simple update checker for SpigotMC
-        updateChecker = new UpdateChecker(this, 78821);
-        try {
-            UPDATE = updateChecker.checkForUpdates();
-            if (UPDATE) {
-                getServer().getConsoleSender().sendMessage(colorize("&9ChatCosmetics > &aUpdate found! Users will be notified upon joining."));
-            }
-        } catch (Exception e) {
-            getServer().getConsoleSender().sendMessage(colorize("&9ChatCosmetics > &cCould not check for possible update!"));
-        }
-
         getCommand("cosmetic").setExecutor(new CosmeticCMD());
-        getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         getServer().getPluginManager().registerEvents(new ChatEvent(), this);
 
         cosmeticsConfig = new CosmeticsConfig(this);
