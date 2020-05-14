@@ -11,23 +11,27 @@ public class CosmeticCMD implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 0) {
-            sender.sendMessage(ChatCosmetics.getInstance().colorize("&cImproper usage. /cosmetics <player>"));
-            return true;
-        }
-
-        if (args.length == 1) {
-            if (!(sender instanceof Player)) {
-                sender.sendMessage(ChatCosmetics.getInstance().colorize("&cYou must be a player to use this command! Console must use the command line."));
+        if (sender.hasPermission("chatcosmetics.use")) {
+            if (args.length == 0) {
+                sender.sendMessage(ChatCosmetics.getInstance().colorize("&cImproper usage. /cosmetics <player>"));
                 return true;
             }
-            Player p = (Player) sender;
-            Player target = ChatCosmetics.getInstance().getServer().getPlayer(args[0]);
-            if (target == null) {
-                sender.sendMessage(ChatCosmetics.getInstance().colorize("&cPlayer not found."));
-            } else {
-                new MainGUI(target).open(p);
+
+            if (args.length == 1) {
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage(ChatCosmetics.getInstance().colorize("&cYou must be a player to use this command! Console must use the command line."));
+                    return true;
+                }
+                Player p = (Player) sender;
+                Player target = ChatCosmetics.getInstance().getServer().getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage(ChatCosmetics.getInstance().colorize("&cPlayer not found."));
+                } else {
+                    new MainGUI(target).open(p);
+                }
             }
+        } else {
+            sender.sendMessage(ChatCosmetics.getInstance().colorize("&cYou do not have permission to use this command!"));
         }
         return true;
     }
