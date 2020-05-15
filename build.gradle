@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
 group = pluginGroup
-version = "1.0.1-SNAPSHOT"
+version = "1.0.2-SNAPSHOT"
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
@@ -14,6 +14,7 @@ repositories {
     }
     repositories {
         maven { url 'https://jitpack.io' }
+        maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
     }
 }
 
@@ -22,6 +23,7 @@ dependencies {
     compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
     compile fileTree(dir: 'libs', include: ['yakocoreapi-*.jar'])
     compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+    compileOnly 'me.clip:placeholderapi:2.10.6'
 }
 
 import org.apache.tools.ant.filters.ReplaceTokens

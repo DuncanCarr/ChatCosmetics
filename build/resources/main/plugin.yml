@@ -1,8 +1,9 @@
 name: ChatCosmetics
-version: 1.0.0-SNAPSHOT
+version: 1.0.2-SNAPSHOT
 main: horizon.chatcosmetics.ChatCosmetics
 authors: [Horizon, yakovliam]
 description: Change chat cosmetics with a fancy GUI or command line.
+softdepend: [PlaceholderAPI]
 
 commands:
   cosmetic:

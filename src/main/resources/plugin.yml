@@ -3,6 +3,7 @@ version: @version@
 main: horizon.chatcosmetics.ChatCosmetics
 authors: [Horizon, yakovliam]
 description: Change chat cosmetics with a fancy GUI or command line.
+softdepend: [PlaceholderAPI]
 
 commands:
   cosmetic:
