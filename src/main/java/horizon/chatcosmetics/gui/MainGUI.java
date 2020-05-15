@@ -15,7 +15,7 @@ public class MainGUI extends DynGui {
     public MainGUI(Player player) {
         super("Edit Cosmetic > " + player.getName(), 3);
 
-        ItemStack playerSkull = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+        ItemStack playerSkull = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
         SkullMeta playerMeta = (SkullMeta) playerSkull.getItemMeta();
         playerMeta.setOwner(player.getName());
         playerMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&b&l" + player.getName()));

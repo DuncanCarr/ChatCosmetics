@@ -6,11 +6,13 @@ import horizon.chatcosmetics.configurations.CosmeticsConfig;
 import horizon.chatcosmetics.events.ChatEvent;
 import horizon.chatcosmetics.utilities.Cosmetic;
 import horizon.chatcosmetics.utilities.CosmeticManager;
+import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -23,9 +25,9 @@ public final class ChatCosmetics extends JavaPlugin {
     private ArrayList<ItemStack> colorItems;
     private static ChatCosmetics instance;
     public static boolean UPDATE;
-    private UpdateChecker updateChecker;
     private CosmeticsConfig cosmeticsConfig;
     private CosmeticManager cosmeticManager;
+    private static Chat chat = null;
 
     @Override
     public void onEnable() {
@@ -42,6 +44,8 @@ public final class ChatCosmetics extends JavaPlugin {
         cosmeticManager = new CosmeticManager();
         colorItems = new ArrayList<>();
         initColorItems();
+
+        setupChat();
     }
 
     public static ChatCosmetics getInstance() {
@@ -76,6 +80,12 @@ public final class ChatCosmetics extends JavaPlugin {
         colorItems.add(createColorItem("&0Black", 	0));
     }
 
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+
     public String colorize(String input) {
         return ChatColor.translateAlternateColorCodes('&', input);
     }
@@ -89,10 +99,6 @@ public final class ChatCosmetics extends JavaPlugin {
         return cosmetics;
     }
 
-    public UpdateChecker getUpdateChecker() {
-        return updateChecker;
-    }
-
     public CosmeticsConfig getCosmeticsConfig() {
         return cosmeticsConfig;
     }
@@ -103,5 +109,9 @@ public final class ChatCosmetics extends JavaPlugin {
 
     public ArrayList<ItemStack> getColorItems() {
         return colorItems;
+    }
+
+    public static Chat getChat() {
+        return chat;
     }
 }

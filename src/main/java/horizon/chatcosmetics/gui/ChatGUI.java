@@ -80,7 +80,7 @@ public class ChatGUI extends DynGui {
             });
         }
 
-        ItemStack back = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+        ItemStack back = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
         SkullMeta backMeta = (SkullMeta) back.getItemMeta();
         backMeta.setOwner("MHF_ArrowLeft");
         backMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&c&lGo Back..."));
