@@ -5,80 +5,28 @@ import horizon.chatcosmetics.ChatCosmetics;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class ChatGUI extends DynGui {
     public ChatGUI(Player player) {
-        super("Edit Chat Color > " + player.getName(), 3);
+        super("Edit Chat Formatting > " + player.getName(), 3);
 
-        for (ItemStack colorItem : ChatCosmetics.getInstance().getColorItems()) {
-            addItemInteraction(colorItem, (p, e) -> {
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&4Dark Red"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&4");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&cRed"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&c");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&6Gold"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&6");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&eYellow"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&e");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&2Dark Green"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&2");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&aGreen"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&a");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&bAqua"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&b");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&3Dark Aqua"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&3");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&1Dark Blue"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&1");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&9Blue"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&9");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&dLight Purple"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&d");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&5Dark Purple"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&5");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&fWhite"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&f");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&7Gray"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&7");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&8Dark Gray"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&8");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-                if (colorItem.getItemMeta().getDisplayName().equals(ChatCosmetics.getInstance().colorize("&0Black"))) {
-                    ChatCosmetics.getInstance().getCosmeticManager().setChatColor(player, "&0");
-                    p.sendMessage(ChatCosmetics.getInstance().colorize("&a(!) Successfully set &f" + player.getName() + "'s &achat color to: " + colorItem.getItemMeta().getDisplayName()));
-                }
-            });
-        }
+        ItemStack color = new ItemStack(Material.RED_BANNER, 1);
+        ItemMeta colorMeta = color.getItemMeta();
+        colorMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&b&lChange color..."));
+        color.setItemMeta(colorMeta);
+
+        ItemStack style = new ItemStack(Material.WRITABLE_BOOK, 1);
+        ItemMeta styleMeta = style.getItemMeta();
+        styleMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&b&lChange style... &7(&cCOMING SOON&7)"));
+        style.setItemMeta(styleMeta);
+
+        setItemInteraction(14, color, (p, e) -> {
+            new ColorGUI("Chat", player).open(p);
+        });
+
+        setItem(16, style);
 
         ItemStack back = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
         SkullMeta backMeta = (SkullMeta) back.getItemMeta();

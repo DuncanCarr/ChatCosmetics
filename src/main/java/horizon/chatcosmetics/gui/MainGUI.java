@@ -30,7 +30,7 @@ public class MainGUI extends DynGui {
         ItemMeta nameMeta = nameColor.getItemMeta();
         nameMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&e&lChange name color..."));
         ArrayList<String> nameLore = new ArrayList<>();
-        nameLore.add(ChatCosmetics.getInstance().colorize("&7Change " + player.getName() + "'s name color"));
+        nameLore.add(ChatCosmetics.getInstance().colorize("&7Change " + player.getName() + "'s name formatting..."));
         nameMeta.setLore(nameLore);
         nameColor.setItemMeta(nameMeta);
 
@@ -38,7 +38,7 @@ public class MainGUI extends DynGui {
         ItemMeta chatMeta = chatColor.getItemMeta();
         chatMeta.setDisplayName(ChatCosmetics.getInstance().colorize("&e&lChange chat color..."));
         ArrayList<String> chatLore = new ArrayList<>();
-        chatLore.add(ChatCosmetics.getInstance().colorize("&7Change " + player.getName() + "'s chat color"));
+        chatLore.add(ChatCosmetics.getInstance().colorize("&7Change " + player.getName() + "'s chat formatting..."));
         chatMeta.setLore(chatLore);
         chatColor.setItemMeta(chatMeta);
 
